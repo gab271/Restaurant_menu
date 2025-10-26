@@ -1,16 +1,50 @@
-# React + Vite
+# Restaurant Menu App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple restaurant menu application built with React and TheMealDB API.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Shows different food categories and meals from around the world. You can click on categories to see dishes and then click on individual meals to see details like ingredients and instructions.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Browse food categories (Seafood, Dessert, Pasta, etc.)
+- View meals by category
+- See detailed information for each meal
+- Prices are randomly generated (API doesn't provide them)
 
-## Expanding the ESLint configuration
+## How to run
+npm install
+npm run dev
+## Technologies used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 18
+- React Router for navigation
+- TheMealDB API (free, no key needed)
+- Vite for build tool
+
+## API
+
+Using TheMealDB API:
+- Categories: `https://www.themealdb.com/api/json/v1/1/categories.php`
+- Filter by category: `https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
+- Meal details: `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`
+
+## Project structure
+src/
+├── App.jsx # Main component with all the pages
+├── App.css # Styles
+└── main.jsx # Entry point
+## Notes
+
+- Prices are generated based on meal ID (not real)
+- All components are in App.jsx for simplicity
+- Used fetch for API calls instead of axios
+- Basic responsive design for mobile
+
+## To-do / Future improvements
+
+- Add search functionality
+- Filter by category from navbar
+- Sort by price
+- Better mobile styles
